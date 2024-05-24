@@ -1,21 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package cat.boscdelacoma.sistemapersistent.model.business.entities;
 
-import cat.boscdelacoma.sistemapersistent.model.business.entities.Jugador;
+public class Jungla extends Jugador {
+    private int barons;
 
-/**
- *
- * @author Sergi
- */
-public class Jungla extends Jugador{
-    int barons;
-    public Jungla(int id, String nom, int edat,int barons) {
-        super(id, nom, edat, "Top Laner");
+    public Jungla(int id, String nom, int edat, int kills, int assists, int morts, int barons) {
+        super(id, nom, edat, "Jungla");
+        setKills(kills);
+        setAssists(assists);
+        setMorts(morts);
         this.barons = barons;
-        
     }
 
     public int getBarons() {
@@ -28,7 +21,6 @@ public class Jungla extends Jugador{
 
     @Override
     public void jugar() {
-        System.out.println("El Jungla esta gankejant top");
+        System.out.println("El jungla està fent objectius");
     }
-    
 }

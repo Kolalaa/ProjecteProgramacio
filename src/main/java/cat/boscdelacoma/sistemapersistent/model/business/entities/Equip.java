@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package cat.boscdelacoma.sistemapersistent.model.business.entities;
 
-/**
- *
- * @author Sergi
- */
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,20 +14,6 @@ public class Equip {
         this.jugadors = new ArrayList<>();
     }
 
-    public void afegirJugador(Jugador jugador) {
-        this.jugadors.add(jugador);
-    }
-
-    public void eliminarJugador(Jugador jugador) {
-        this.jugadors.remove(jugador);
-    }
-
-    public List<Jugador> getJugadors() {
-        return jugadors;
-    }
-
-    // Getters i setters...
-
     public int getId() {
         return id;
     }
@@ -44,16 +22,21 @@ public class Equip {
         return nom;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public List<Jugador> getJugadors() {
+        return jugadors;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void afegirJugador(Jugador jugador) {
+        this.jugadors.add(jugador);
     }
 
-    public void setJugadors(List<Jugador> jugadors) {
-        this.jugadors = jugadors;
+    public void eliminarJugador(Jugador jugador) {
+        this.jugadors.remove(jugador);
     }
-    
+
+    public void mostrarJugadors() {
+        for (Jugador jugador : jugadors) {
+            System.out.println(jugador.getNom() + " - " + jugador.getRol());
+        }
+    }
 }

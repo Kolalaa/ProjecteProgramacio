@@ -9,7 +9,8 @@ public class MySQLPersistencia {
     private static final String URL = "jdbc:mysql://localhost:3306/lol_equip_db";
     private String user;
     private String password;
-
+    
+        
     public MySQLPersistencia(String user, String password) {
         this.user = user;
         this.password = password;
@@ -35,7 +36,7 @@ public class MySQLPersistencia {
     }
 
     private void guardarJugador(Connection conn, Jugador jugador, int equipId) throws SQLException {
-        String query = "INSERT INTO jugadors (id, nom, edat, rol, kills, assists, morts, barons, equip_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO jugador (id, nom, edat, rol, kills, assists, morts, barons, id_equip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setInt(1, jugador.getId());
             pstmt.setString(2, jugador.getNom());

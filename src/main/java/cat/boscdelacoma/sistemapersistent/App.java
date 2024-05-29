@@ -1,38 +1,60 @@
 package cat.boscdelacoma.sistemapersistent;
 
+import cat.boscdelacoma.sistemapersistent.model.business.entities.*;
+import cat.boscdelacoma.sistemapersistent.model.persistence.daos.MySQLPersistencia;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
-
-    private static Scene scene;
+    private MySQLPersistencia persistencia;
 
     @Override
-    public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
-        stage.setScene(scene);
-        stage.show();
-    }
+    public void start(Stage primaryStage) {
+        
+        
+        String usuari = "root";
+        
+        String password = "";
+        persistencia = new MySQLPersistencia(usuari, password);
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
+        VBox root = new VBox();
+        Scene scene = new Scene(root, 800, 600);
 
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
+        Label teamLabel = new Label("Teams");
+        ListView<Equip> teamListView = new ListView<>();
+        Button addTeamButton = new Button("Afegir Equip");
+        Button editTeamButton = new Button("Editar Equip");
+        Button deleteTeamButton = new Button("Eliminar Equip");
+        Button addPlayerButton = new Button("Afegir jugador");
+
+        root.getChildren().addAll(teamLabel, teamListView, addTeamButton, editTeamButton, deleteTeamButton);
+
+        addTeamButton.setOnAction(e -> {
+            // Logic to add a team
+        });
+
+        editTeamButton.setOnAction(e -> {
+            // Logic to edit a team
+        });
+
+        deleteTeamButton.setOnAction(e -> {
+            // Logic to delete a team
+        });
+        
+        addPlayerButton.setOnAction(e -> {
+            
+        });
+
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Team Manager");
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
-
 }

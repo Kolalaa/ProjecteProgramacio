@@ -45,7 +45,7 @@ public class SecondaryController {
     @FXML
     private void afegirJugador() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("afegirJugador.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/cat/boscdelacoma/sistemapersistent/afegirJugador.fxml"));
             Parent root = loader.load();
 
             afegirJugador controller = loader.getController();
@@ -72,7 +72,7 @@ public class SecondaryController {
     @FXML
     private void modificarJugador() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("actualitzarJugador.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("modificarJugador.fxml"));
             Parent root = loader.load();
 
             actualitzarJugador controller = loader.getController();

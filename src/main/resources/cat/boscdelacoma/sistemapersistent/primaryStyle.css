@@ -1,0 +1,35 @@
+.root {
+    -fx-background-image: url("img/league.jpg"); /* Ruta de la imagen de fondo */
+    -fx-background-size: cover; /* Escalar la imagen para cubrir todo el fondo */
+    -fx-font-family: 'Arial';
+    -fx-padding: 20;
+    -fx-alignment: center;
+}
+
+/* Estilo para los botones */
+.button {
+    -fx-background-color: #0a0a0a; /* Fondo oscuro */
+    -fx-text-fill: #d4af37; /* Texto dorado */
+    -fx-font-size: 16px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-border-color: #d4af37; /* Borde dorado */
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Sombra */
+}
+
+.button:hover {
+    -fx-background-color: #222222; /* Fondo un poco más claro al pasar el ratón */
+    -fx-text-fill: #ffffff; /* Texto blanco al pasar el ratón */
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 255, 0.8), 10, 0, 0, 0); /* Sombra brillante */
+}
+
+/* Estilo para el texto */
+.label {
+    -fx-font-size: 24px;
+    -fx-text-fill: #ffffff; /* Texto blanco */
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Sombra para resaltar el texto */
+    -fx-padding: 10 0;
+}

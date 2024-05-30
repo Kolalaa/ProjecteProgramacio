@@ -29,7 +29,7 @@ public class Conexio {
 
         if (cn.con != null) {
             try (Statement st = cn.con.createStatement();
-                 ResultSet rs = st.executeQuery("SELECT * FROM jugadors")) {
+                 ResultSet rs = st.executeQuery("SELECT * FROM jugador")) {
 
                 while (rs.next()) {
                     System.out.println(rs.getInt("id") + " " + rs.getString("nom"));

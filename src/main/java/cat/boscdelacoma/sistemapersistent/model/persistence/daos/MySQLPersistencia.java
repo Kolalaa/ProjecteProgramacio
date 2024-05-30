@@ -6,18 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLPersistencia {
-    private static final String URL = "jdbc:mysql://localhost:3306/lol_equip_db";
-    private String user;
-    private String password;
+    public static final String URL = "jdbc:mysql://localhost:3306/lol_equip_db";
+    public static final String USER = "root";
+    public static final String PASSWORD = "";
     
         
-    public MySQLPersistencia(String user, String password) {
-        this.user = user;
-        this.password = password;
+    public MySQLPersistencia(String url,String user, String password) {
+        
     }
 
     public Connection connect() throws SQLException {
-        return DriverManager.getConnection(URL, user, password);
+        return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
     public void guardarEquip(Equip equip) throws SQLException {
@@ -35,7 +34,7 @@ public class MySQLPersistencia {
         }
     }
 
-    private void guardarJugador(Connection conn, Jugador jugador, int equipId) throws SQLException {
+    public void guardarJugador(Connection conn, Jugador jugador, int equipId) throws SQLException {
         String query = "INSERT INTO jugador (id, nom, edat, rol, kills, assists, morts, barons, id_equip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setInt(1, jugador.getId());
@@ -57,7 +56,7 @@ public class MySQLPersistencia {
 
     public List<Equip> obtenirTotsElsEquips() throws SQLException {
         List<Equip> equips = new ArrayList<>();
-        try (Connection conn = connect()) {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
             String query = "SELECT * FROM equips";
             try (PreparedStatement pstmt = conn.prepareStatement(query);
                  ResultSet rs = pstmt.executeQuery()) {

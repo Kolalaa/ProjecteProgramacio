@@ -8,8 +8,8 @@
 <VBox alignment="CENTER" prefHeight="601.0" prefWidth="999.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cat.boscdelacoma.sistemapersistent.SecondaryController">
     <children>
         <Label text="Base de dades relacional" />
-      <Button mnemonicParsing="false" onAction="#mostrarDades" text="mostrar datos" />
-      <Button mnemonicParsing="false" text="añadir datos" />
+        <Button mnemonicParsing="false" onAction="#mostrarDades" text="mostrar datos" />
+        <Button mnemonicParsing="false" onAction="#afegirJugador" text="añadir datos" />
         <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="tornar enredera" />
     </children>
     <padding>

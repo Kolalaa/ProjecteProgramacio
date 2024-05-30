@@ -40,7 +40,7 @@ public class SecondaryController {
 
     afegirJugador controller = loader.getController();
     persistencia = new MySQLPersistencia("jdbc:mysql://localhost:3306/lol_equip_db", "root", "");
-        
+    equip = new Equip(3, "Patata");    
         // Set persistencia and equip objects
     controller.setPersistencia(persistencia);
     controller.setEquip(equip);

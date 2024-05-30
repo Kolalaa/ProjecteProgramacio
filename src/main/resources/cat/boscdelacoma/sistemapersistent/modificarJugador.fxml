@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="cat.boscdelacoma.sistemapersistent.controller.actualitzarJugador">
+    <children>
+        <VBox layoutX="168.0" layoutY="78.0" spacing="10.0">
+            <children>
+                <Label text="ID" />
+                <TextField fx:id="idField" />
+                <Label text="Name" />
+                <TextField fx:id="nameField" />
+                <Label text="Age" />
+                <TextField fx:id="ageField" />
+                <Label text="Role" />
+                <TextField fx:id="roleField" />
+                <Label text="Kills" />
+                <TextField fx:id="killsField" />
+                <Label text="Assists" />
+                <TextField fx:id="assistsField" />
+                <Label text="Deaths" />
+                <TextField fx:id="deathsField" />
+                <Label text="Barons (if Jungla)" />
+                <TextField fx:id="baronsField" />
+                <Button mnemonicParsing="false" onAction="#handleUpdatePlayer" text="Update Player" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

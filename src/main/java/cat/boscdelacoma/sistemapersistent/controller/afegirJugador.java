@@ -43,7 +43,7 @@ public class afegirJugador {
     @FXML
 private void handleAddPlayer() {
     try {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lol_equip_db", "root", "");
+        Connection conn = DriverManager.getConnection(MySQLPersistencia.URL, MySQLPersistencia.USER, "");
         
         int id = Integer.parseInt(idField.getText());
         String name = nameField.getText();
